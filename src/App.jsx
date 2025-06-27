@@ -28,6 +28,11 @@ function App() {
     setTasks(newTasks);
   }
 
+  function onTrashClick(taskID) {
+    const newTasks = tasks.filter((task) => task.id !== taskID);
+    setTasks(newTasks);
+  }
+
   return (
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
       <div className="w-[500px]">
@@ -35,7 +40,11 @@ function App() {
           Task Manager
         </h1>
         <AddTask />
-        <Tasks tasks={tasks} onTaskClick={onTaskClick} />
+        <Tasks
+          tasks={tasks}
+          onTaskClick={onTaskClick}
+          onTrashClick={onTrashClick}
+        />
       </div>
     </div>
   );

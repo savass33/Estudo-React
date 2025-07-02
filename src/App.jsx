@@ -12,6 +12,15 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  useEffect(() => {
+  // CHAMAR A API
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+  // PEGAR OS DADOS QUE ELA RETORNA
+
+  // ARMAZENAR OS DADOS NO STATE
+
+  }, [])
+
   function onTaskClick(taskID) {
     const newTasks = tasks.map((task) => {
       if (task.id === taskID) {
